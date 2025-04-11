@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: 0;
+    background-color: #1b1b1b;
+}
+
+.sidebar .header-sidebar {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    background: #1e1e1e;
+    letter-spacing: 1;
+}
+
+nav ul{
+    background: #1b1b1b;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li:last-child{
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li a{
+   position: relative;
+   color: white;
+   text-decoration: none;
+   font-size: 18px;
+   padding-left: 30px;
+   font-weight: 500;
+   display: block;
+   width: 100%;
+   border-left: 3px solid transparent;
+}
+
+nav ul li.active a{
+    color: cyan;
+    background-color: #1e1e1e;
+    border-left-color: cyan;
+}
+
+nav ul ul{
+    position: static;
+    display: none;
+}
+
+nav ul .customer-show.show{
+    display: block;
+}
+
+nav ul .subscribe-show.show{
+    display: block;
+}
+
+nav ul ul li{
+    line-height: 42px;
+    border-bottom: none;
+}
+
+nav ul ul li a{
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 50px;
+}
+
+nav ul li.active ul li a{
+    color: #e6e6e6;
+    background-color: #1b1b1b;
+    border-left-color: transparent;
+}
+
+nav ul ul li a:hover{
+    color: cyan!important;
+    background-color: #1e1e1e!important;
+    border-left-color: transparent;
+}
+
+nav ul li a i{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;
+}
+
+/* main content Create New Customer */
+.main-content {
+    margin-left: 250px; /* offset to the right of the sidebar */
+    padding: 20px;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+}
+
+.customer-name{
+    font-size: 20px;
+    width: 70%;
+    border-radius: 9px;
+}
+
+.email{
+    font-size: 20px;
+    width: 50%;
+    border-radius: 9px;
+}
+
+.phone{
+    font-size: 20px;
+    width: 30%;
+    border-radius: 9px;
+}
+
+.create-customer-btn{
+    height: 40px;
+    width: 250px;
+    justify-content: center;
+    margin-top:100px;
+    margin-left: 350px;
+    color: #1b1b1b;
+    border-radius: 9px;
+}
+
+nav ul ul li.active a{
+    color: cyan;
+    background-color: #1e1e1e;
+    border-left-color: cyan;
+}
+
+/* main content Create New Subsribe */
