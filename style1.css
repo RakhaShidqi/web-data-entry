@@ -148,4 +148,7 @@ nav ul ul li.active a{
     border-left-color: cyan;
 }
 
-/* main content Create New Subsribe */
+.customer-id{
+    float: right;
+    
+}

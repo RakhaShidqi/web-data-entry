@@ -1,5 +1,5 @@
 <?php
-    require "insert-customer.php";
+    include "insert-customer.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
                     <i class='bx bx-caret-down first'></i>
             </a>
                 <ul class="customer-show">
-                    <li><a href="create-new-customer.php">Create New Customer</a></li>
+                    <li><a href="">Create New Customer</a></li>
                     <li><a href="data-customer.php">Data Customer</a></li>
                 </ul>
             </li>
@@ -34,8 +34,8 @@
                     <i class='bx bx-caret-down second'></i>
                 </a>
                 <ul class="subscribe-show">
-                    <li><a href="#">Create New Subscribe</a></li>
-                    <li><a href="#">Data Subscribe</a></li>
+                    <li><a href="create-new-subscribe.php">Create New Subscribe</a></li>
+                    <li><a href="data-subscribe.php">Data Subscribe</a></li>
                 </ul>
             </li>
             <li><a href="#">Status</a></li>

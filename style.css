@@ -117,3 +117,6 @@ nav ul li a i.rotate{
     background-color: #f4f4f4;
     overflow-y: auto;
 }
+
+.container { max-width: 1200px;
+ }

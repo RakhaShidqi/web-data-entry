@@ -1,45 +1,24 @@
 <?php
-// Matikan error output ke browser (gunakan log saat debugging)
-error_reporting(0);
+// Include file koneksi database
+include('db.php');
 
-// Koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "db_middleware");
+// Query untuk mengambil data dari tabel
+$sql = "SELECT name, email, phone FROM customers";  // Ganti 'customers' dengan nama tabel kamu
+$result = $conn->query($sql);
 
-// Cek koneksi
-if (!$conn) {
-    http_response_code(500);
-    echo json_encode(["error" => "Koneksi gagal: " . mysqli_connect_error()]);
-    exit;
+// Array untuk menyimpan data
+$data = [];
+
+if ($result->num_rows > 0) {
+    // Loop melalui hasil query dan masukkan ke dalam array
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
 }
 
-// Jalankan query untuk memilih kolom tertentu
-$sql = "SELECT customer_id, name, email, phone FROM customers"; // pilih kolom yang diinginkan
-$result = mysqli_query($conn, $sql);
+// Menutup koneksi database
+$conn->close();
 
-// Cek hasil query
-if (!$result) {
-    http_response_code(500);
-    echo json_encode(["error" => "Query gagal: " . mysqli_error($conn)]);
-    exit;
-}
-
-// Ambil data
-$rows = array();
-while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
-}
-
-// Bersihkan output buffer sebelum echo JSON
-ob_clean();
-flush();
-
-// Set header JSON
-header('Content-Type: application/json');
-http_response_code(200);
-echo json_encode($rows);
-
-// Tutup koneksi
-mysqli_close($conn);
+// Kirim data dalam format JSON
+echo json_encode(['data' => $data]);
 ?>
-
-
