@@ -1,14 +1,10 @@
-<?php
-    session_start();
-?>
-
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Data Entry</title>
+        <title>Data Entry - Customer</title>
         <!-- Bootstrap Styling -->
         <link
             rel="stylesheet"
@@ -76,30 +72,122 @@
                 </div>
             </header>
 
-            <!-- Cards -->
-            <div class="card mb-2 shadow">
-                <div class="card-header h5">Number of Customers</div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Amount: 00</p>
-                        <footer class="blockquote-footer">
-                            Customer data from
-                            <cite title="Source Title">CSV File</cite>
-                        </footer>
-                    </blockquote>
-                </div>
+            <!-- Body Content -->
+            <div class="w-100 d-flex justify-content-between">
+                <h2>Customer</h2>
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addCustModal"
+                >
+                    Add New
+                </button>
             </div>
-            <div class="card mb-2 shadow">
-                <div class="card-header h5">Number of Subscription</div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Amount: 00</p>
-                        <footer class="blockquote-footer">
-                            Customer data from
-                            <cite title="Source Title">CSV File</cite>
-                        </footer>
-                    </blockquote>
-                </div>
+            <hr />
+            <table class="table table-responsive">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fullname</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-danger">Suspend</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-danger">Suspend</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-danger">Suspend</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td class="italic text-success">Active</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-around">
+                <nav aria-label="Table Pagination">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
             <!-- Action Box -->
@@ -141,12 +229,15 @@
 
             <!-- Navbar -->
             <nav class="nav nav-pills fixed-bottom justify-content-around mb-3">
-                <a href="/" class="nav-link active" aria-current="page">Home</a>
-                <a href="/customer.php" class="nav-link" id="customerTab"
-                    >Customers</a
+                <a href="/" class="nav-link" aria-current="page">Home</a>
+                <a href="/customer.php" class="nav-link active" id="customerTab"
+                    >Customer</a
                 >
-                <a href="/subscription.php" class="nav-link" id="subscriptionTab"
-                    >Subscriptions</a
+                <a
+                    href="/subscription.php"
+                    class="nav-link"
+                    id="subscriptionTab"
+                    >Subscription</a
                 >
             </nav>
 
