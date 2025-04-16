@@ -34,7 +34,7 @@
                     <i class='bx bx-caret-down second'></i>
                 </a>
                 <ul class="subscribe-show">
-                    <li><a href="#">Create New Subscribe</a></li>
+                    <li><a href="create-new-subscribe.php">Create New Subscribe</a></li>
                     <li><a href="data-subscribe.php">Data Subscribe</a></li>
                 </ul>
             </li>

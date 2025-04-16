@@ -10,7 +10,8 @@
     <title>Data Entry App</title>
     <!-- My Css -->
      <link rel="stylesheet" href="style1.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+     <!-- Jquery -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -76,31 +77,33 @@
         <label for="customerName">Customer Name:</label>
             <input type="text" id="customerName" placeholder="Enter customer name">
             <button onclick="searchCustomer()">🔍</button>
+
+            <label for="subscribeID" class="customer-id">Customer ID:</label>
             <br><br>
             <label for="subscribe-id">Subscribe ID: </label>
             <input type="text" name="subscribe-id" class="subscribe-id">
             <br><br>
-
-            <label for="subscribeID" class="customer-id">Customer ID:</label>
-            <input type="text" id="subscribeID" placeholder="Subscribe ID">
+            <div class="button-container">
             <button class="save-btn" onclick="saveData()">Save</button>
             <button class="post-btn" onclick="postData()">Post</button>
             </div>
+            </div>
             <br><br>
 
-            <table>
+            <table id="serviceTable">
             <thead>
                 <tr>
-                    <th>+</th>
+                    <th class="add-row">+</th>
                     <th>Service Name</th>
                     <th>Installation ID</th>
                     <th>Monthly Amount</th>
                     <th>Start Service Date</th>
                     <th>Next Billing Date</th>
                     <th>Payment Status</th>
+                    <th class="remove-row">Remove Row</th>
                 </tr>
             </thead>
-            <tbody id="serviceTable">
+            <tbody>
                 <!-- Rows will be added here -->
             </tbody>
         </table>
@@ -108,11 +111,51 @@
         </div>
         <br>
         <div class="footer-section">
-            <label for="statusDocument">Status Document:</label>
+            <label for="statusDocument" class="status-document" >Status Document:</label>
             <label>Post Date:</label>
             <span id="postDate"></span>
         </div>
     </main>
     <script src="script.js"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const serviceTable = document.getElementById("serviceTable").getElementsByTagName("tbody")[0];
+
+    // Event listener untuk tombol + di baris header
+    document.querySelector(".add-row").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Buat baris baru
+        const newRow = document.createElement("tr");
+
+        // Isi kolom dengan input field dan tombol remove
+        newRow.innerHTML = `
+            <td></td>
+            <td><input type="text" name="serviceName[]" placeholder="Service Name"></td>
+            <td><input type="text" name="installationID[]" placeholder="Installation ID"></td>
+            <td><input type="number" name="monthlyAmount[]" placeholder="Monthly Amount"></td>
+            <td><input type="date" name="startServiceDate[]"></td>
+            <td><input type="date" name="nextBillingDate[]"></td>
+            <td>
+                <select name="paymentStatus[]">
+                    <option value="Unpaid">Unpaid</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </td>
+            <td><button type="button" class="remove-row">Remove</button></td>
+        `;
+
+        // Menambahkan baris baru ke tabel
+        serviceTable.appendChild(newRow);
+
+        // Event listener untuk tombol "Remove" yang ada pada setiap baris
+        newRow.querySelector(".remove-row").addEventListener("click", function () {
+            serviceTable.removeChild(newRow);
+        });
+    });
+});
+
+   </script> 
 </body>
 </html>

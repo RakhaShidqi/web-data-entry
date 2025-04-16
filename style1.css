@@ -149,6 +149,49 @@ nav ul ul li.active a{
 }
 
 .customer-id{
-    float: right;
-    
+    font-size: 15px;
+    margin-left: 250px;
+}
+
+.button-container {
+    display: flex; /* Mengaktifkan Flexbox */
+    gap: 10px; /* Memberikan jarak antar tombol */
+}
+
+.save-btn, .post-btn {
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.save-btn{
+    margin-left: 590px;
+}
+
+.post-btn{
+    margin-left: 80px;
+}
+
+.footer-section{
+    display: flex;
+}
+
+.status-document{
+    margin-right: 460px;
+}
+
+th.add-row {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    text-align: center;
+}
+
+th.remove-row{
+    background-color: red;
+    cursor: pointer;
+    padding: 8px;
+    text-align: center;
 }
